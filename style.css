@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: "Orbitron", sans-serif;
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(20, 0, 40, 0.3),
+            rgba(20, 0, 40, 0.8)
+        ),
+        linear-gradient(
+            135deg,
+            #12002b,
+            #2b1055,
+            #5b146b
+        );
+
+    overflow: hidden;
+}
+
+
+/* SUN */
+
+body::before {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: linear-gradient(
+        #ffe66d,
+        #ff6ec7,
+        #ff1493
+    );
+
+    top: 8%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    filter: blur(1px);
+
+    box-shadow:
+        0 0 40px #ff6ec7,
+        0 0 100px rgba(255, 20, 147, 0.5);
+
+    z-index: -2;
+}
+
+
+/* FLOOR GRID */
+
+body::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200%;
+    height: 55%;
+
+    bottom: -20%;
+    left: -50%;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 255, 255, 0.4) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(0, 255, 255, 0.4) 1px,
+            transparent 1px
+        );
+
+    background-size: 50px 50px;
+
+    transform: perspective(300px) rotateX(60deg);
+
+    z-index: -1;
+}
+
+
+/* MAIN CARD */
+
+.container {
+    width: 100%;
+    max-width: 520px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    background: rgba(15, 5, 35, 0.88);
+
+    border: 2px solid #00ffff;
+    border-radius: 20px;
+
+    box-shadow:
+        0 0 15px #00ffff,
+        0 0 35px rgba(255, 0, 255, 0.5);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* TITLE */
+
+h1 {
+    font-size: 42px;
+
+    color: #ff71ce;
+
+    text-shadow:
+        3px 3px 0 #01cdfe,
+        0 0 15px #ff00ff;
+
+    margin-bottom: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+.subtitle {
+    color: #b967ff;
+
+    margin-bottom: 35px;
+
+    font-size: 14px;
+
+    letter-spacing: 3px;
+}
+
+
+/* CHOICES */
+
+.choices {
+    display: flex;
+    justify-content: center;
+
+    gap: 18px;
+
+    margin-bottom: 35px;
+}
+
+
+.choice {
+    width: 105px;
+    height: 105px;
+
+    border: 2px solid #ff71ce;
+    border-radius: 15px;
+
+    background: rgba(30, 10, 60, 0.9);
+
+    font-size: 45px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 10px #ff71ce,
+        inset 0 0 10px rgba(255, 113, 206, 0.3);
+
+    transition: 0.25s;
+}
+
+
+.choice:hover {
+    transform:
+        translateY(-8px)
+        scale(1.08);
+
+    border-color: #01cdfe;
+
+    box-shadow:
+        0 0 15px #01cdfe,
+        0 0 30px #ff00ff;
+
+    background: #32145f;
+}
+
+
+.choice:active {
+    transform: scale(0.95);
+}
+
+
+/* RESULTS */
+
+.result {
+    margin-bottom: 25px;
+}
+
+
+.result p {
+    margin: 10px 0;
+
+    color: #d8b4ff;
+
+    font-size: 14px;
+}
+
+
+.result span {
+    color: #01cdfe;
+}
+
+
+.result h2 {
+    margin-top: 20px;
+
+    color: #fffb96;
+
+    text-shadow:
+        0 0 10px #ff71ce;
+
+    font-size: 20px;
+}
+
+
+/* SCORE */
+
+.score {
+    display: flex;
+    justify-content: space-around;
+
+    padding-top: 22px;
+
+    border-top: 1px solid #b967ff;
+
+    color: #ff71ce;
+}
+
+
+.score span {
+    display: block;
+
+    margin-top: 5px;
+
+    color: #01cdfe;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 0 8px #01cdfe;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+
+    .container {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .subtitle {
+        font-size: 11px;
+    }
+
+    .choices {
+        gap: 10px;
+    }
+
+    .choice {
+        width: 78px;
+        height: 78px;
+
+        font-size: 34px;
+    }
+
+    body::before {
+        width: 250px;
+        height: 250px;
+    }
+}
