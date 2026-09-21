@@ -4,45 +4,11 @@ A regra: pedra vence de papel, papel vence de tesoura e tesoura vence de pedra;
 Precisamos mostrar o resultado na tela e mostrar o placar com pontos atualizados */
 
 
-
-
 const rock = document.getElementById("rock")
-
-rock.addEventListener("click",() => {
-    playerChoice = "rock"
-
-    const computerChoice = pickAHand()
-
-console.log("You choose ROCK")
-console.log("The computer choose " + computerChoice)
-
-})
-
 const paper = document.getElementById("paper")
-
-paper.addEventListener("click",() => {
-    playerChoice = "paper"
-
-    const computerChoice = pickAHand()
-
-
-   console.log("You choose PAPER")
-   console.log("The computer choose " + computerChoice)
-
-})
-
 const scissors = document.getElementById("scissors")
 
-scissors.addEventListener("click", () => {
-    playerChoice = "scissors"
-
-    const computerChoice = pickAHand()
-
-    console.log("You choose SCISSORS")
-    console.log("The computer choose " + computerChoice)
-})
-
- const choices = ["rock", "paper", "scissors"]
+const choices = ["rock", "paper", "scissors"]
 
 const pickAHand = () => {
     const randomNumber = Math.floor(Math.random() * choices.length)
@@ -50,10 +16,11 @@ const pickAHand = () => {
     return choices[randomNumber]
 }
 
-console.log(pickAHand())
-
 const play = (playerChoice) => {
     const computerChoice = pickAHand()
+
+    console.log(playerChoice, computerChoice)
+    
 
     if (playerChoice === computerChoice) {
         console.log("DRAW")
@@ -67,5 +34,19 @@ const play = (playerChoice) => {
         console.log("COMPUTER WINS")
     }
 }
+
+
+rock.addEventListener("click", () => {
+    play("rock")
+})
+
+paper.addEventListener("click", () => {
+    play("paper")
+})
+
+scissors.addEventListener("click", () => {
+    play("scissors")
+})
+
 
 
