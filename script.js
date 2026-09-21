@@ -16,6 +16,12 @@ const computerScoreDisplay = document.getElementById("computer-score")
 let playerScore = 0
 let computerScore = 0
 
+const handEmoji = {
+    rock: "✊",
+    paper: "✋",
+    scissors: "✌️"
+}
+
 
 
 const choices = ["rock", "paper", "scissors"]
@@ -29,13 +35,19 @@ const pickAHand = () => {
 const play = (playerChoice) => {
     const computerChoice = pickAHand()
 
-    playerChoiceDisplay.textContent = playerChoice
-    computerChoiceDisplay.textContent = computerChoice
+    playerChoiceDisplay.textContent = handEmoji[playerChoice]
+    computerChoiceDisplay.textContent = handEmoji[computerChoice]
 
+    resultMessage.classList.remove("win", "lose", "draw")
+
+    resultMessage.classList.remove("animate")
+    void resultMessage.offsetWidth
+    resultMessage.classList.add("animate")
 
 
     if (playerChoice === computerChoice) {
         resultMessage.textContent = "DRAW"
+        resultMessage.classList.add("draw")
 
 
     } else if (
@@ -44,10 +56,12 @@ const play = (playerChoice) => {
         (playerChoice === "paper" && computerChoice === "rock")
     ) {
         resultMessage.textContent = "YOU WIN"
+        resultMessage.classList.add("win")
         playerScore++
 
     } else {
         resultMessage.textContent = "COMPUTER WINS"
+        resultMessage.classList.add("lose")
         computerScore++
 
     }

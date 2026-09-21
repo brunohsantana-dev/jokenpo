@@ -296,3 +296,46 @@ h1 {
         height: 250px;
     }
 }
+
+#result-message.win {
+    color: #00ffff;
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 20px #00ffff;
+}
+
+#result-message.lose {
+    color: #ff2bd6;
+    text-shadow:
+        0 0 5px #ff2bd6,
+        0 0 10px #ff2bd6,
+        0 0 20px #ff2bd6;
+}
+
+#result-message.draw {
+    color: #ffd166;
+    text-shadow:
+        0 0 5px #ffd166,
+        0 0 10px #ffd166,
+        0 0 20px #ffd166;
+}
+
+@keyframes result-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animate {
+    animation: result-pop 0.3s;
+}
+
