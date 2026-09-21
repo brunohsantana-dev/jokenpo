@@ -1,4 +1,7 @@
 # Jokenpô ✊✋✌️
+## 🎮 Live Demo
+
+👉 [Play Jokenpô](https://brunohsantana-dev.github.io/jokenpo/)
 
 🇧🇷 **Português** | 🇬🇧 **English below**
 
