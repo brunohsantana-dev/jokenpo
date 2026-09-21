@@ -12,6 +12,7 @@ const computerChoiceDisplay = document.getElementById("computer-choice")
 const resultMessage = document.getElementById("result-message")
 const playerScoreDisplay = document.getElementById("player-score")
 const computerScoreDisplay = document.getElementById("computer-score")
+const reset = document.getElementById("reset")
 
 let playerScore = 0
 let computerScore = 0
@@ -89,7 +90,19 @@ scissors.addEventListener("click", () => {
     play("scissors")
 })
 
+reset.addEventListener("click", () => {
+    playerScore = 0
+    computerScore= 0
 
+    playerScoreDisplay.textContent = playerScore
+    computerScoreDisplay.textContent = computerScore
+
+    playerChoiceDisplay.textContent = "-"
+    computerChoiceDisplay.textContent ="-"
+    resultMessage.textContent = "Faça sua escolha!"
+
+    resultMessage.classList.remove("win", "lose", "draw", "animate")
+})
 
 
 

@@ -70,6 +70,7 @@ body::before {
 /* FLOOR GRID */
 
 body::after {
+    display: none;
     content: "";
 
     position: absolute;
@@ -105,7 +106,7 @@ body::after {
     width: 100%;
     max-width: 520px;
 
-    padding: 40px;
+    padding: 25px 40px;
 
     text-align: center;
 
