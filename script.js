@@ -3,9 +3,13 @@ Comparamos as escolhas e decidimos se houve vitoria, derrota ou empate;
 A regra: pedra vence de papel, papel vence de tesoura e tesoura vence de pedra;
 Precisamos mostrar o resultado na tela e mostrar o placar com pontos atualizados */
 
+let playerChoice = ""
+
+
 const rock = document.getElementById("rock")
 
 rock.addEventListener("click",() => {
+    playerChoice = "rock"
 
 
 console.log("You choose ROCK")
@@ -16,6 +20,7 @@ console.log("You choose ROCK")
 const paper = document.getElementById("paper")
 
 paper.addEventListener("click",() => {
+    playerChoice = "paper"
 
    console.log("You choose PAPER")
 
@@ -24,7 +29,18 @@ paper.addEventListener("click",() => {
 const scissors = document.getElementById("scissors")
 
 scissors.addEventListener("click", () => {
+    playerChoice = "scissors"
 
     console.log("You choose SCISSORS")
 })
 
+ const choices = ["rock", "paper", "scissors"]
+
+ const pickAHand = () => {
+    const randomNumber = Math.floor(Math.random() * choices.lenght)
+
+    return choices[randomNumber]
+
+}
+
+console.log(pickAHand())
